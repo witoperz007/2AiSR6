@@ -26,7 +26,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e6d1aea-9933-4e42-a9c0-f9377e19b205" name="Changes" comment="first code" />
+    <list default="true" id="7e6d1aea-9933-4e42-a9c0-f9377e19b205" name="Changes" comment="s" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +113,7 @@
       <workItem from="1776864303329" duration="403000" />
       <workItem from="1776864722788" duration="1903000" />
       <workItem from="1778674015151" duration="485000" />
-      <workItem from="1778674527979" duration="814000" />
+      <workItem from="1778674527979" duration="1027000" />
     </task>
     <task id="LOCAL-00001" summary="first code">
       <option name="closed" value="true" />
@@ -123,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778675031618</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="s">
+      <option name="closed" value="true" />
+      <created>1778675494782</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675494782</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first code" />
-    <option name="LAST_COMMIT_MESSAGE" value="first code" />
+    <MESSAGE value="s" />
+    <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
 </project>
