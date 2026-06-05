@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton
 import sys
 
-class ButtonApp(QWidget):
+class Clicker(QWidget):
     def __init__(self):
         super().__init__()
         self.init_ui()
