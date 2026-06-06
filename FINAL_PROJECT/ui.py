@@ -1,7 +1,6 @@
-from PyQt6.QtGui import QIcon,QFont
-from PyQt6.QtCore import QSize, Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton,QLabel
-import sys
+from PyQt6.QtGui import QIcon, QFont
+from PyQt6.QtCore import QSize, Qt, QPropertyAnimation, QPoint, QSequentialAnimationGroup
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QGraphicsOpacityEffect
 from logic import Counter
 class Clicker(QWidget):
     def __init__(self):
@@ -45,6 +44,41 @@ class Clicker(QWidget):
 
         self.count=self.stats.increment()
         self.label_count.setText(f"Coins:{str(self.count)}")
+
+        self.show_floating_text()
+
+    def show_floating_text(self):
+
+        mouse_pos = self.mapFromGlobal(self.cursor().pos())
+
+        float_label = QLabel(f"+{self.stats.click_power}", self)
+        float_label.setFont(QFont("Arial", 16, QFont.Weight.Bold))
+        float_label.setStyleSheet("color: #FFD700;")  # Złoty kolor monet!
+        float_label.resize(50, 30)
+
+        float_label.move(mouse_pos.x() - 10, mouse_pos.y() - 20)
+        float_label.show()  # Pokazujemy go na ekranie
+
+        anim_move = QPropertyAnimation(float_label, b"pos")
+        anim_move.setDuration(600)
+        anim_move.setStartValue(float_label.pos())
+        anim_move.setEndValue(QPoint(float_label.x(), float_label.y() - 60))
+
+        opacity_effect = QGraphicsOpacityEffect(float_label)
+        float_label.setGraphicsEffect(opacity_effect)
+
+        anim_fade = QPropertyAnimation(opacity_effect, b"opacity")
+        anim_fade.setDuration(600)
+        anim_fade.setStartValue(1.0)
+        anim_fade.setEndValue(0.0)
+
+        anim_move.start()
+        anim_fade.start()
+
+        anim_move.finished.connect(float_label.deleteLater)
+
+        float_label.anim1 = anim_move
+        float_label.anim2 = anim_fade
 
     def more_m(self):
         success=self.stats.upgrade_coin()
