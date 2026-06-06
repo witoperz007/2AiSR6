@@ -1,7 +1,7 @@
 
 
 
-#TU ZROBIE POZNIEJ LICZNIK DO UPGRADU I ODEJMOWANIU ITD ITD
+#TU ZROBIE POZNIEJ LICZNIK DO UPGRADU I ODEJMOWANIU ITD ITD (zrobione)
 class Counter:
     def __init__(self):
         self.count = 0
