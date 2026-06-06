@@ -26,12 +26,20 @@ class Clicker(QWidget):
         self.button2.clicked.connect(self.more_m)
         self.button2.move(350, 400)
         self.button2.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.button2.resize(170,50)
+
         self.resize(900, 600)
 
         self.label_count = QLabel("Coins", self)
-        self.label_count.move(350, 360)
+        self.label_count.move(390, 360)
         self.label_count.setFont(QFont("Arial", 20))
         self.label_count.resize(200, 40)
+
+        self.label_info = QLabel("", self)
+        self.label_info.move(80, 480)
+        self.label_info.setFont(QFont("Arial", 14, QFont.Weight.Bold))
+        self.label_info.resize(700, 40)
+        self.label_info.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
     def on_click(self):
 
@@ -43,6 +51,8 @@ class Clicker(QWidget):
         if success:
             self.label_count.setText(f"Coins: {self.stats.count}")
             self.button2.setText(f"Upgrade (Cost: {self.stats.upgrade_cost})")
-            print("Upgraded,more Coins!")
+            self.label_info.setStyleSheet("color: green;")
+            self.label_info.setText(f"Upgraded! Click power increased to: {self.stats.click_power}")
         else:
-            print("Not enough coins!")
+            self.label_info.setStyleSheet("color: red;")
+            self.label_info.setText("Not enough coins!")

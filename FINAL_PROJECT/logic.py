@@ -15,7 +15,7 @@ class Counter:
     def upgrade_coin(self):
        if self.count >= self.upgrade_cost:
            self.count-=self.upgrade_cost
-           self.click_power+=1
-           self.upgrade_cost=int(self.upgrade_cost*1.7)
+           self.click_power=int((self.click_power+1)*1.3)
+           self.upgrade_cost=int((self.upgrade_cost+1)*1.7)
            return True
        return False
