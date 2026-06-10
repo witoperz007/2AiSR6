@@ -27,6 +27,13 @@ class Clicker(QWidget):
         self.button2.setCursor(Qt.CursorShape.PointingHandCursor)
         self.button2.resize(170,50)
 
+        #jakas potencjalna opcja sklepu ze skinami co daja wiecej coinow
+#        self.button3=QPushButton(f"Skins")
+#        #self.button3.clicked.connect()
+#        self.button3.move(350, 450)
+#        self.button3.setCursor(Qt.CursorShape.PointingHandCursor)
+#        self.button3.resize(170, 50)
+        
         self.resize(900, 600)
 
         self.label_count = QLabel("Coins", self)
