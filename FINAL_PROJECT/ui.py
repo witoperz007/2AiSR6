@@ -53,11 +53,11 @@ class Clicker(QWidget):
 
         float_label = QLabel(f"+{self.stats.click_power}", self)
         float_label.setFont(QFont("Arial", 16, QFont.Weight.Bold))
-        float_label.setStyleSheet("color: #FFD700;")  # Złoty kolor monet!
+        float_label.setStyleSheet("color: #FFD700;")
         float_label.resize(50, 30)
 
         float_label.move(mouse_pos.x() - 10, mouse_pos.y() - 20)
-        float_label.show()  # Pokazujemy go na ekranie
+        float_label.show()
 
         anim_move = QPropertyAnimation(float_label, b"pos")
         anim_move.setDuration(600)
